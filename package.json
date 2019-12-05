@@ -1,0 +1,25 @@
+{
+  "name": "@boldreports/types",
+  "version": "2.1.14",
+  "description": "TypeScript definitions for Bold Reports",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boldreports/types.git"
+  },
+  "keywords": [
+    "Bold Reports",
+    "Bold Report Viewer",
+    "Bold Report Designer",
+    "Report Viewer",
+    "Report Designer"
+  ],
+  "license": "SEE LICENSE IN README.md",
+  "author": "Syncfusion Inc",
+  "dependencies": {
+    "@types/jquery": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/boldreports/types/issues"
+  },
+  "homepage": "https://boldreports.com"
+}
