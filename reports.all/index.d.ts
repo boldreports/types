@@ -1,7 +1,7 @@
 /**
  *  filename: index.d.ts
- *  version : 2.1.14
- *  Copyright Syncfusion Inc. 2001 - 2019. All rights reserved.
+ *  version : 2.1.23
+ *  Copyright Syncfusion Inc. 2001 - 2020. All rights reserved.
  *  Use of this code is subject to the terms of our license.
  *  A copy of the current license can be obtained at any time by e-mailing
  *  licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -1811,6 +1811,11 @@ declare namespace ej {
          * @returns {void}
          */
         public setParameterBlockVisibility(show: boolean): void;
+
+        /** Cancel the report processing.
+         * @returns {void}
+         */
+        public cancelRendering(): void;
     }
     export namespace ReportViewer {
 
@@ -1936,6 +1941,11 @@ declare namespace ej {
              * @Default {false}
              */
             enablePageVirtualization?: boolean;
+
+            /** Gets or sets the waiting popup template for the Report viewer.
+             * @Default {null}
+             */
+            waitingPopupTemplate?: String;
 
             // tslint:disable:max-line-length
             /** Fires during drill through action done in report. If you want to perform any operation when a drill through action is performed, you can make use of the drillThrough event.
@@ -2250,6 +2260,10 @@ declare namespace ej {
             /** returns Report Viewer container Id.
              */
             containerId?: string;
+
+            /** Set the waitingPopupTemplate in report viewer.
+             */
+            waitingPopupTemplate?: string;
         }
 
         export interface PrintProgressChangedEventArgs {
@@ -2273,6 +2287,10 @@ declare namespace ej {
             /** returns Report Viewer container Id.
              */
             containerId?: string;
+
+            /** Set the waitingPopupTemplate in report viewer.
+             */
+            waitingPopupTemplate?: string;
         }
 
         export interface ExportItemClickEventArgs {
@@ -2470,7 +2488,7 @@ declare namespace ej {
             click?: string;
 
             /** Specifies the toolbar items.
-             * @Default {ej.ReportViewer.ToolbarItems.All}
+             * @Default {null}
              */
             items?: ej.ReportViewer.ToolbarItems | string;
 
@@ -2612,6 +2630,8 @@ declare namespace ej {
             Print,
             //Specifies the Refresh as value in ToolbarItems to get specified item.
             Refresh,
+            //Specifies the Stop as value in ToolbarItems to get specified item.
+            Stop,
             //Specifies the Zoom as value in ToolbarItems to get specified item.
             Zoom,
             //Specifies the FittoPage as value in ToolbarItems to get specified item.
