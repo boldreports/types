@@ -1,7 +1,7 @@
 /**
  *  filename: index.d.ts
- *  version : 2.2.23
- *  Copyright Syncfusion Inc. 2001 - 2020. All rights reserved.
+ *  version : 2.2.28
+ *  Copyright Syncfusion Inc. 2001 - 2018. All rights reserved.
  *  Use of this code is subject to the terms of our license.
  *  A copy of the current license can be obtained at any time by e-mailing
  *  licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -941,6 +941,11 @@ declare namespace ej {
             /** Defines the settings of the ReportDesigner toolbar.
              */
             toolbarSettings?: ToolbarSettings;
+
+            /** Gets or sets the waiting popup template for the Report designer.
+             * @Default {null}
+             */
+            waitingPopupTemplate?: string;
 
             /** This event will be triggered before AJAX loads.
              */
