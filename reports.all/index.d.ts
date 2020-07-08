@@ -1,6 +1,6 @@
 /**
  *  filename: index.d.ts
- *  version : 2.2.32
+ *  version : 2.3.26
  *  Copyright Syncfusion Inc. 2001 - 2018. All rights reserved.
  *  Use of this code is subject to the terms of our license.
  *  A copy of the current license can be obtained at any time by e-mailing
@@ -2478,6 +2478,16 @@ declare namespace ej {
              * @Default {110px}
              */
             labelWidth?: string;
+
+            /** Specifies the minimum date in the date parameter that the user can select. By default, the minDateTime value is set as null
+             * @Default {null}
+             */
+            minDateTime?: string;
+
+            /** Specifies the maximum date in the date parameter that the user can select. By default, the maxDateTime value is set as null
+             * @Default {null}
+             */
+            maxDateTime?: string;
 
             /** Show or hide the parameter block on report initial rendering.
              * @Default {false}
