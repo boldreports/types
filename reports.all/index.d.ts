@@ -1,7 +1,7 @@
 /**
  *  filename: index.d.ts
- *  version : 2.3.26
- *  Copyright Syncfusion Inc. 2001 - 2018. All rights reserved.
+ *  version : 2.3.39
+ *  Copyright Syncfusion Inc. 2001 - 2020. All rights reserved.
  *  Use of this code is subject to the terms of our license.
  *  A copy of the current license can be obtained at any time by e-mailing
  *  licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -913,6 +913,11 @@ declare namespace ej {
              */
             reportPath?: string;
 
+            /** Gets or sets the schema version of the report.
+             * @Default {2016}
+             */
+            reportVersion?: string;
+
             /** Gets or sets the report type.
              * @Default {ej.ReportDesigner.ReportType.RDL}
              */
@@ -1375,14 +1380,18 @@ declare namespace ej {
 
         export interface PermissionSettings {
 
-            /** Shows or hides the create, edit and delete options in dataset pane with the help of ej.ReportDesigner.Permission enum.
+            // tslint:disable:max-line-length
+            /** Shows or hides the create, edit, and delete options for embedded and shared dataset from dataset pane with the help of ej.ReportDesigner.Permission enum.
              * @Default {ej.ReportDesigner.Permission.All}
              */
+            // tslint:enable:max-line-length
             dataSet?: ej.ReportDesigner.Permission | string;
 
-            /** Shows or hides the create, edit and delete options in data source pane with the help of ej.ReportDesigner.Permission enum
+            // tslint:disable:max-line-length
+            /** Shows or hides the create, edit, and delete options for embedded and shared data source from data source pane with the help of ej.ReportDesigner.Permission enum
              * @Default {ej.ReportDesigner.Permission.All}
              */
+            // tslint:enable:max-line-length
             dataSource?: ej.ReportDesigner.Permission | string;
         }
 
@@ -1551,6 +1560,8 @@ declare namespace ej {
             PPT,
             //Specifies the CSV property in ExportOptions to get CSV option.
             CSV,
+            //Specifies the XML property in ExportOptions to get XML option.
+            XML,
             //Specifies the customItems property in ExportOptions to get customItems option.
             CustomItems,
         }
@@ -1644,12 +1655,14 @@ declare namespace ej {
         }
 
         enum Permission {
-            //Shows or hides create option in dataset pane
+            //Shows or hides embedded dataset option in dataset pane
             Create,
             //Shows or hides the edit option in dataset pane
             Edit,
             //Shows or hides the delete option in dataset pane
             Delete,
+            //Shows or hides the shared dataset option in dataset pane
+            Shared,
             //Shows all the options in dataset pane
             All,
         }
@@ -2011,7 +2024,7 @@ declare namespace ej {
              */
             ajaxError?(e: AjaxErrorEventArgs): void;
 
-            /** This event will be triggered on rendering the Report Viewer toolbar.
+            /** This event will be triggered on rendering the report viewer toolbar.
              */
             toolbarRendering?(e: ToolbarRenderingEventArgs): void;
 
@@ -2050,6 +2063,12 @@ declare namespace ej {
              */
             // tslint:enable:max-line-length
             reportPrint?(e: ReportPrintEventArgs): void;
+
+            // tslint:disable:max-line-length
+            /** Fires when begin to add the parameter element in the report viewer parameter block. To perform any changes in parameter element, use the beforeParameterAdd event.
+             */
+            // tslint:enable:max-line-length
+            beforeParameterAdd?(e: BeforeParameterAddEventArgs): void;
         }
 
         export interface DrillThroughEventArgs {
@@ -2213,6 +2232,10 @@ declare namespace ej {
             /** Send the custom data.
              */
             data?: string;
+
+            /** Change the Web API action with custom endpoint.
+             */
+            actionName?: string;
         }
 
         export interface AjaxSuccessEventArgs {
@@ -2262,13 +2285,17 @@ declare namespace ej {
              */
             handled?: boolean;
 
-            /** returns Report Viewer container Id.
+            /** returns report viewer container Id.
              */
             containerId?: string;
 
             /** Set the waitingPopupTemplate in report viewer.
              */
             waitingPopupTemplate?: string;
+
+            /** Change the Web API action with custom endpoint.
+             */
+            actionName?: string;
         }
 
         export interface PrintProgressChangedEventArgs {
@@ -2289,7 +2316,7 @@ declare namespace ej {
              */
             handled?: boolean;
 
-            /** returns Report Viewer container Id.
+            /** returns report viewer container Id.
              */
             containerId?: string;
 
@@ -2352,6 +2379,29 @@ declare namespace ej {
             /** true if you have to load the external style file; otherwise, false.
              */
             isStyleLoad?: boolean;
+        }
+
+        export interface BeforeParameterAddEventArgs {
+
+            /** returns the parameter model.
+             */
+            parameterModel?: any;
+
+            /** returns the current report parameter container id
+             */
+            containerId?: string;
+
+            /** true if the event should be handled; otherwise, false.
+             */
+            handled?: boolean;
+
+            /** returns the parameter settings.
+             */
+            parameterSettings?: any;
+
+            /** set custom properties to the report parameter.
+             */
+            customProperties?: any;
         }
 
         export interface DataSource {
@@ -2548,6 +2598,8 @@ declare namespace ej {
             PPT,
             //Specifies the CSV property in ExportOptions to get CSV option.
             CSV,
+            //Specifies the XML property in ExportOptions to get XML option.
+            XML,
             //Specifies the customItems property in ExportOptions to get customItems option.
             CustomItems,
         }
