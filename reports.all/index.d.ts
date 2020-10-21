@@ -1,6 +1,6 @@
 /**
  *  filename: index.d.ts
- *  version : 2.3.39
+ *  version : 2.4.10
  *  Copyright Syncfusion Inc. 2001 - 2020. All rights reserved.
  *  Use of this code is subject to the terms of our license.
  *  A copy of the current license can be obtained at any time by e-mailing
@@ -1273,12 +1273,12 @@ declare namespace ej {
             exportOptions?: ej.ReportViewer.ExportOptions | string;
 
             /** Specifies the excel export format.
-             * @Default {ej.ReportViewer.ExcelFormats.Excel97to2003}
+             * @Default {ej.ReportViewer.ExcelFormats.Excel2013}
              */
             excelFormat?: ej.ReportViewer.ExcelFormats | string;
 
             /** Specifies the word export format.
-             * @Default {ej.ReportViewer.WordFormats.Doc}
+             * @Default {ej.ReportViewer.WordFormats.Docx}
              */
             wordFormat?: ej.ReportViewer.WordFormats | string;
 
@@ -2425,12 +2425,12 @@ declare namespace ej {
             exportOptions?: ej.ReportViewer.ExportOptions | string;
 
             /** Specifies the excel export format.
-             * @Default {ej.ReportViewer.ExcelFormats.Excel97to2003}
+             * @Default {ej.ReportViewer.ExcelFormats.Excel2013}
              */
             excelFormat?: ej.ReportViewer.ExcelFormats | string;
 
             /** Specifies the word export format.
-             * @Default {ej.ReportViewer.WordFormats.Doc}
+             * @Default {ej.ReportViewer.WordFormats.Docx}
              */
             wordFormat?: ej.ReportViewer.WordFormats | string;
 
@@ -2438,6 +2438,11 @@ declare namespace ej {
              * @Default {empty}
              */
             customItems?: any[];
+
+            /** Sets the image quality of data visualization items in report export. It allows value range from 1 to 10.
+             * @Default {2}
+             */
+            imageQuality?: number;
         }
 
         export interface PageSettings {
@@ -2543,6 +2548,25 @@ declare namespace ej {
              * @Default {false}
              */
             hideParameterBlock?: boolean;
+
+            /** Defines the date time format displayed in the DateTimePicker. By default, the dateTimeFormat value is set as empty.
+             * @Default {empty}
+             */
+            dateTimeFormat?: string;
+
+            // tslint:disable:max-line-length
+            /** Defines the time format displayed in the time dropdown inside the DateTimePicker popup. By default, the timeDisplayFormat value is set as empty.
+             * @Default {empty}
+             */
+            // tslint:enable:max-line-length
+            timeDisplayFormat?: string;
+
+            // tslint:disable:max-line-length
+            /** Sets the time interval between the two adjacent time values in the DateTimePicker time popup. By default, the timeInterval value is set as 30.
+             * @Default {30}
+             */
+            // tslint:enable:max-line-length
+            timeInterval?: number;
         }
 
         export interface ToolbarSettings {
@@ -2656,8 +2680,6 @@ declare namespace ej {
             HTML,
             //Specifies the XML property in WordFormats to get specified version of exported format.
             XML,
-            //Specifies the Automatic property in WordFormats to get specified version of exported format.
-            Automatic,
         }
 
         enum Orientation {
