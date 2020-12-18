@@ -1,7 +1,7 @@
 /**
  *  filename: index.d.ts
- *  version : 2.4.10
- *  Copyright Syncfusion Inc. 2001 - 2020. All rights reserved.
+ *  version : 2.4.19
+ *  Copyright Syncfusion Inc. 2001 - 2018. All rights reserved.
  *  Use of this code is subject to the terms of our license.
  *  A copy of the current license can be obtained at any time by e-mailing
  *  licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -643,6 +643,12 @@ declare namespace ej {
          */
         public addItem(item: any): void;
 
+        /** Add a parameter to the report at runtime.
+         * @param {any} JSON for the new parameter to be added in the report
+         * @returns {void}
+         */
+        public addParameter(reportParameter: any): void;
+
         /** Visually move the selected report item over its closest intersected report items.
          * @returns {void}
          */
@@ -704,6 +710,21 @@ declare namespace ej {
          * @returns {void}
          */
         public cut(): void;
+
+        /** Get the list of datasets from the report.
+         * @returns {void}
+         */
+        public getDataSets(): void;
+
+        /** Get the list of datasources from the report.
+         * @returns {void}
+         */
+        public getDataSources(): void;
+
+        /** Get the list of parameters from the report.
+         * @returns {void}
+         */
+        public getParameters(): void;
 
         /** Returns the boolean value that specifies whether the report has changes or not.
          * @returns {boolean}
@@ -795,6 +816,12 @@ declare namespace ej {
          */
         public removeItem(itemName: string): void;
 
+        /** Remove a parameter from the report at runtime.
+         * @param {string} Name of the existing report parameter
+         * @returns {void}
+         */
+        public removeParameter(reportParameterName: string): void;
+
         /** This method saves the report into the report server.
          * @param {string} Path of the report server report
          * @returns {void}
@@ -876,6 +903,13 @@ declare namespace ej {
          * @returns {void}
          */
         public updateDatasource(datasourceName: string, datasource: any): void;
+
+        /** Updates the existing parameter in the report at runtime.
+         * @param {string} Name of the existing report parameter
+         * @param {any} JSON for the new parameter to be added in the report
+         * @returns {void}
+         */
+        public updateParameter(reportParameterName: string, reportParameter: any): void;
     }
     export namespace ReportDesigner {
 
@@ -2567,6 +2601,14 @@ declare namespace ej {
              */
             // tslint:enable:max-line-length
             timeInterval?: number;
+
+            // tslint:disable:max-line-length
+            /** Specifies whether the hidden or internal report parameters can be exposed to user or not. By default, the value is set as false and only the public visibility parameters are
+             * exposed outside.
+             * @Default {false}
+             */
+            // tslint:enable:max-line-length
+            accessInternalValue?: boolean;
         }
 
         export interface ToolbarSettings {
@@ -2735,6 +2777,8 @@ declare namespace ej {
             PrintLayout,
             //Specifies the PageSetup as value in ToolbarItems to get specified item.
             PageSetup,
+            //Specifies the ExportSetup as value in ToolbarItems to get specified item.
+            ExportSetup,
         }
 
         enum PrintOptions {
