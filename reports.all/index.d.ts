@@ -1,6 +1,6 @@
 /**
  *  filename: index.d.ts
- *  version : 2.4.19
+ *  version : 3.1.31
  *  Copyright Syncfusion Inc. 2001 - 2018. All rights reserved.
  *  Use of this code is subject to the terms of our license.
  *  A copy of the current license can be obtained at any time by e-mailing
@@ -918,6 +918,16 @@ declare namespace ej {
             /** Shows or hides the items of configuration pane in ReportDesigner control.
              */
             configurePaneSettings?: ConfigurePaneSettings;
+
+            /** Enable or Disable Impersonate option for report designer datasources
+             * @Default {false}
+             */
+            enableImpersonate?: boolean;
+
+            /** Gets or sets the list of custom font names.
+             * @Default {[ ]}
+             */
+            fontNames?: any[];
 
             /** Specifies the locale for report designer.
              * @Default {en-US}
@@ -1878,11 +1888,6 @@ declare namespace ej {
              */
             dataSources?: DataSource[];
 
-            /** Enables or disables the page cache of report.
-             * @Default {false}
-             */
-            enablePageCache?: boolean;
-
             /** Specifies the export settings.
              */
             exportSettings?: ExportSettings;
@@ -1989,10 +1994,12 @@ declare namespace ej {
              */
             enableDropDownSearch?: boolean;
 
-            /** Enables and disables the page virtualization.
+            // tslint:disable:max-line-length
+            /** Set the property value as true to enable the processing of a large amount of data with a lesser memory footprint and without performance degradation.
              * @Default {false}
              */
-            enablePageVirtualization?: boolean;
+            // tslint:enable:max-line-length
+            enableVirtualEvaluation?: boolean;
 
             /** Gets or sets the waiting popup template for the Report viewer.
              * @Default {null}
