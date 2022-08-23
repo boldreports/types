@@ -1,7 +1,7 @@
 /**
  *  filename: index.d.ts
- *  version : 3.2.22
- *  Copyright Syncfusion Inc. 2001 - 2021. All rights reserved.
+ *  version : 4.2.52
+ *  Copyright Syncfusion Inc. 2001 - 2018. All rights reserved.
  *  Use of this code is subject to the terms of our license.
  *  A copy of the current license can be obtained at any time by e-mailing
  *  licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -919,10 +919,30 @@ declare namespace ej {
              */
             configurePaneSettings?: ConfigurePaneSettings;
 
+            /** Set the property as true to disable the code module configuration in RDL reports.
+             * @Default {false}
+             */
+            disableCodeModule?: boolean;
+
             /** Enable or Disable Impersonate option for report designer datasources
              * @Default {false}
              */
             enableImpersonate?: boolean;
+
+            /** Set the property as true to load images as blob in GET ajax calls.
+             * @Default {false}
+             */
+            enableImageBlobing?: boolean;
+
+            /** Gets or sets the data connectors name as array of strings to filter data connectors in data panel.
+             * @Default {[ ]}
+             */
+            filterDataConnectors?: any[];
+
+            /** Gets or sets the report items name as array of strings to filter report items in item panel.
+             * @Default {[ ]}
+             */
+            filterReportItems?: any[];
 
             /** Gets or sets the list of custom font names.
              * @Default {[ ]}
@@ -982,11 +1002,6 @@ declare namespace ej {
              */
             serviceUrl?: string;
 
-            /** Gets or sets the tenant name of the user groups; it will be used when integrating report designer with report server.
-             * @Default {null}
-             */
-            tenantName?: string;
-
             /** Defines the settings of the ReportDesigner toolbar.
              */
             toolbarSettings?: ToolbarSettings;
@@ -995,6 +1010,11 @@ declare namespace ej {
              * @Default {null}
              */
             waitingPopupTemplate?: string;
+
+            /** Gets or sets the tab index of data panel.
+             * @Default {ej.ReportDesigner.DataTab.Dataset}
+             */
+            dataTabIndex?: ej.ReportDesigner.DataTab | string;
 
             /** This event will be triggered before AJAX loads.
              */
@@ -1357,7 +1377,7 @@ declare namespace ej {
             /** Specifies the margins of print layout.
              * @Default {}
              */
-            margins?: number;
+            margins?: any;
         }
 
         export interface Parameters {
@@ -1677,7 +1697,7 @@ declare namespace ej {
             //Specifies the A3 as value in pageSettings.paperSize to get specified size.
             A3,
             //Specifies the A4 as value in pageSettings.paperSize to get specified size.
-            Portrait,
+            A4,
             //Specifies the B4(JIS) as value in pageSettings.paperSize to get specified size.
             B4_JIS,
             //Specifies the B5(JIS) as value in pageSettings.paperSize to get specified size.
@@ -1772,6 +1792,13 @@ declare namespace ej {
             RDLC,
         }
 
+        enum DataTab {
+            //Sets the datasource panel as default tab in data panel.
+            Datasource,
+            //Sets the dataset panel as default tab in data panel.
+            Dataset,
+        }
+
         enum DataFormat {
             //Returns the report data in JSON format.
             JSON,
@@ -1799,9 +1826,10 @@ declare namespace ej {
         public destroy(): void;
 
         /** Export the report to the specified format.
+         * @param {string} Indicates to choose the export type while exporting like PDF or Excel or Word and etc.
          * @returns {void}
          */
-        public exportReport(): void;
+        public exportReport(show: string): void;
 
         /** Fit the report page to the container.
          * @returns {void}
@@ -1844,9 +1872,10 @@ declare namespace ej {
         public gotoNextPage(): void;
 
         /** Go to specific page index of the report.
+         * @param {number} Indicates to pass the page number to show the page directly instead of starting from first page.
          * @returns {void}
          */
-        public gotoPageIndex(): void;
+        public gotoPageIndex(show: number): void;
 
         /** Navigate to previous page from the current page.
          * @returns {void}
@@ -1900,7 +1929,7 @@ declare namespace ej {
             /** Specifies the locale for report viewer.
              * @Default {en-US}
              */
-            locale?: number;
+            locale?: string;
 
             /** Specifies the page settings.
              */
@@ -2511,7 +2540,7 @@ declare namespace ej {
             /** Specifies the margins of print layout.
              * @Default {}
              */
-            margins?: number;
+            margins?: any;
         }
 
         export interface Parameter {
@@ -2742,7 +2771,7 @@ declare namespace ej {
             //Specifies the A3 as value in pageSettings.paperSize to get specified size.
             A3,
             //Specifies the A4 as value in pageSettings.paperSize to get specified size.
-            Portrait,
+            A4,
             //Specifies the B4(JIS) as value in pageSettings.paperSize to get specified size.
             B4_JIS,
             //Specifies the B5(JIS) as value in pageSettings.paperSize to get specified size.
