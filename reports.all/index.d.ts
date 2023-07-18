@@ -1,7 +1,7 @@
 /**
  *  filename: index.d.ts
- *  version : 5.1.20
- *  Copyright Syncfusion Inc. 2001 - 2023. All rights reserved.
+ *  version : 5.2.26
+ *  Copyright Syncfusion Inc. 2001 - 2018. All rights reserved.
  *  Use of this code is subject to the terms of our license.
  *  A copy of the current license can be obtained at any time by e-mailing
  *  licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -1598,11 +1598,6 @@ declare namespace ej {
              * @Default {empty}
              */
             category?: string;
-
-            /** Gets information to provide content for custom report item tooltip.
-             * @Default {null}
-             */
-            toolTip?: any;
         }
 
         export interface ToolbarSettings {
@@ -2723,6 +2718,11 @@ declare namespace ej {
              */
             items?: ej.ReportViewer.ToolbarItems | string;
 
+            /** Specifies the toolbars.
+             * @Default {All}
+             */
+            toolbars?: ej.ReportViewer.Toolbars | string;
+
             /** Shows or hides the toolbar.
              * @Default {true}
              */
@@ -2879,7 +2879,20 @@ declare namespace ej {
             PageSetup,
             //Specifies the ExportSetup as value in ToolbarItems to get specified item.
             ExportSetup,
+            //Specifies the Analytics as value in ToolbarItems to get specified item.
+            Analytics,
+            //Specifies the Settings as value in ToolbarItems to get specified item.
+            Settings,
             //Shows all toolbar items.
+            All,
+        }
+
+        enum Toolbars {
+            //Specifies the Horizontal as value in Toolbars to display horizontal toolbar.
+            Horizontal,
+            //Specifies the Vertical as value in Toolbars to display vertical toolbar.
+            Vertical,
+            //Shows both vertical and horizontal toolbars.
             All,
         }
 
