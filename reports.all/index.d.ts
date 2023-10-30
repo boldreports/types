@@ -1,7 +1,7 @@
 /**
  *  filename: index.d.ts
- *  version : 5.2.26
- *  Copyright Syncfusion Inc. 2001 - 2023. All rights reserved.
+ *  version : 1.0.5
+ *  Copyright Syncfusion Inc. 2001 - 2018. All rights reserved.
  *  Use of this code is subject to the terms of our license.
  *  A copy of the current license can be obtained at any time by e-mailing
  *  licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -1080,6 +1080,14 @@ declare namespace ej {
             /** This event will be triggered on rendering the Report Designer toolbar.
              */
             toolbarRendering?(e: ToolbarRenderingEventArgs): void;
+
+            /** This event will be triggered when data encryption is performing.
+             */
+            encryptData?(e: EncryptDataEventArgs): void;
+
+            /** This event will be triggered when data decryption is performing.
+             */
+            decryptData?(e: DecryptDataEventArgs): void;
         }
 
         export interface AjaxBeforeLoadEventArgs {
@@ -1298,6 +1306,44 @@ declare namespace ej {
             /** Returns toolbar element.
              */
             target?: JQuery;
+
+            /** Returns the report designer model
+             */
+            model?: any;
+
+            /** Returns the name of the event
+             */
+            type?: string;
+        }
+
+        export interface EncryptDataEventArgs {
+
+            /** The plain text data to be encrypted.
+             */
+            data?: string;
+
+            /** true, if the event should be canceled; otherwise, false.
+             */
+            cancel?: boolean;
+
+            /** Returns the report designer model
+             */
+            model?: any;
+
+            /** Returns the name of the event
+             */
+            type?: string;
+        }
+
+        export interface DecryptDataEventArgs {
+
+            /** The ciphertext data to be decrypted.
+             */
+            data?: string;
+
+            /** true, if the event should be canceled; otherwise, false.
+             */
+            cancel?: boolean;
 
             /** Returns the report designer model
              */
@@ -2015,6 +2061,11 @@ declare namespace ej {
              */
             serviceAuthorizationToken?: string;
 
+            /** Specifies the toolbar render mode of the report.
+             * @Default {ej.ReportViewer.ToolbarRenderMode.Native}
+             */
+            toolbarRenderMode?: ej.ReportViewer.ToolbarRenderMode | string;
+
             /** Enables and disables the parameter block scroller.
              * @Default {true}
              */
@@ -2641,6 +2692,12 @@ declare namespace ej {
             // tslint:enable:max-line-length
             delimiterChar?: string;
 
+            /** Specifies the parameter panel docking position.
+This support applicable only in Classic view.
+             * @Default {ej.ReportViewer.Position.Top}
+             */
+            position?: ej.ReportViewer.Position | string;
+
             /** Specifies the height of the combobox parameter popup list. By default, the popup height value is 152px.
              * @Default {152px}
              */
@@ -2856,6 +2913,17 @@ declare namespace ej {
             Custom,
         }
 
+        enum Position {
+            //Specify the value to dock parameter panel in top side.
+            Top,
+            //Specify the value to dock parameter panel in bottom side.
+            Bottom,
+            //Specify the value to dock parameter panel in right side.
+            Right,
+            //Specify the value to dock parameter panel in left side.
+            Left,
+        }
+
         enum ToolbarItems {
             //Specifies the Print as value in ToolbarItems to get specified item.
             Print,
@@ -2879,6 +2947,8 @@ declare namespace ej {
             PageSetup,
             //Specifies the ExportSetup as value in ToolbarItems to get specified item.
             ExportSetup,
+            //Specifies the Find as value in ToolbarItems to get specified item.
+            Find,
             //Specifies the Analytics as value in ToolbarItems to get specified item.
             Analytics,
             //Specifies the Settings as value in ToolbarItems to get specified item.
@@ -2919,6 +2989,13 @@ declare namespace ej {
             Mobile,
             //Specifies the Desktop property in RenderMode to get specified output.
             Desktop,
+        }
+
+        enum ToolbarRenderMode {
+            //Specifies the Native property in toolbarRenderMode.
+            Native,
+            //Specifies the Classic property in toolbarRenderMode.
+            Classic,
         }
     }
 }
