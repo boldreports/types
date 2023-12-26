@@ -1,6 +1,6 @@
 /**
  *  filename: index.d.ts
- *  version : 5.3.8
+ *  version : 5.4.20
  *  Copyright Syncfusion Inc. 2001 - 2023. All rights reserved.
  *  Use of this code is subject to the terms of our license.
  *  A copy of the current license can be obtained at any time by e-mailing
@@ -2730,6 +2730,11 @@ This support applicable only in Classic view.
              */
             maxDateTime?: string;
 
+            /** Show or hide the parameter tooltip on report initial rendering.
+             * @Default {false}
+             */
+            hideTooltip?: boolean;
+
             /** Show or hide the parameter block on report initial rendering.
              * @Default {false}
              */
@@ -2789,6 +2794,16 @@ This support applicable only in Classic view.
              * @Default {true}
              */
             showTooltip?: boolean;
+
+            /** Enable or Disable auto hide for horizontal toolbar.
+             * @Default {true}
+             */
+            autoHide?: boolean;
+
+            /** Set auto hide time delay for horizontal toolbar.
+             * @Default {5}
+             */
+            autoHideDelay?: number;
 
             /** Specifies the toolbar template ID.
              * @Default {empty}
