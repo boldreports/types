@@ -1,7 +1,7 @@
 /**
  *  filename: index.d.ts
- *  version : 5.4.20
- *  Copyright Syncfusion Inc. 2001 - 2023. All rights reserved.
+ *  version : 6.1.34
+ *  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
  *  Use of this code is subject to the terms of our license.
  *  A copy of the current license can be obtained at any time by e-mailing
  *  licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -2103,6 +2103,11 @@ declare namespace ej {
             // tslint:enable:max-line-length
             enableVirtualEvaluation?: boolean;
 
+            /** Set the property value as true to enable to render the millions of records in seconds.
+             * @Default {false}
+             */
+            smartRendering?: boolean;
+
             /** Gets or sets the waiting popup template for the Report viewer.
              * @Default {null}
              */
@@ -2968,6 +2973,8 @@ This support applicable only in Classic view.
             Analytics,
             //Specifies the Settings as value in ToolbarItems to get specified item.
             Settings,
+            //Specifies the LimitRecordSetup as value in ToolbarItems to get specified item.
+            LimitRecordSetup,
             //Shows all toolbar items.
             All,
         }

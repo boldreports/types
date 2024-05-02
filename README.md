@@ -10,11 +10,11 @@ Take a look at the `Bold Reports` live demo [here](https://demos.boldreports.com
 
 ## Documentation
 
-For complete `Bold Reports` documentation, please visit [https://documentation.boldreports.com/](https://documentation.boldreports.com/)
+For complete `Bold Reports` documentation, please visit [https://documentation.boldreports.com/](https://documentation.boldreports.com/?utm_source=npm&utm_medium=listing&utm_campaign=boldreports-types-npm)
 
 ### Offline Demos
 
-Download our Reporting Platform installer from [here](https://www.boldreports.com/pricing/).
+Download our Reporting Platform installer from [here](https://www.boldreports.com/pricing/?utm_source=npm&utm_medium=listing&utm_campaign=boldreports-types-npm).
 
 ## Support
 
@@ -22,8 +22,8 @@ In case of any questions regarding the use of `Bold Reports`, please [contact us
 
 ## Release Notes
 
-Refer the `Bold Reports` Product Release Notes in [online Release Notes at Syncfusion](https://www.boldreports.com/release-history/).
+Refer the `Bold Reports` Product Release Notes in [online Release Notes at Syncfusion](https://www.boldreports.com/release-history/?utm_source=npm&utm_medium=listing&utm_campaign=boldreports-types-npm).
 
 ## License Information
 
-For licensing information about `Bold Reports`, Take a look at the Syncfusion License Agreements from [here](https://www.boldreports.com/terms-of-use).
+For licensing information about `Bold Reports`, Take a look at the Syncfusion License Agreements from [here](https://www.boldreports.com/terms-of-use?utm_source=npm&utm_medium=listing&utm_campaign=boldreports-types-npm).
