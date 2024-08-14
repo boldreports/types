@@ -1,6 +1,6 @@
 /**
  *  filename: index.d.ts
- *  version : 6.1.34
+ *  version : 6.2.32
  *  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
  *  Use of this code is subject to the terms of our license.
  *  A copy of the current license can be obtained at any time by e-mailing
@@ -1549,6 +1549,11 @@ declare namespace ej {
              */
             enableDropDownSearch?: boolean;
 
+            /** Show or hide the parameter popup re-size on report initial rendering.
+             * @Default {false}
+             */
+            enablePopupResize?: boolean;
+
             /** Specifies the export settings for Report Viewer component.
              * @Default {}
              */
@@ -2095,6 +2100,11 @@ declare namespace ej {
              * @Default {false}
              */
             enableDropDownSearch?: boolean;
+
+            /** Show or hide the parameter popup re-size on report initial rendering.
+             * @Default {false}
+             */
+            enablePopupResize?: boolean;
 
             // tslint:disable:max-line-length
             /** Set the property value as true to enable the processing of a large amount of data with a lesser memory footprint and without performance degradation.
