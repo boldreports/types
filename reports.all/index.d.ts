@@ -1,6 +1,6 @@
 /**
  *  filename: index.d.ts
- *  version : 6.2.32
+ *  version : 6.3.16
  *  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
  *  Use of this code is subject to the terms of our license.
  *  A copy of the current license can be obtained at any time by e-mailing
@@ -761,11 +761,12 @@ declare namespace ej {
         public newServerReport(name: string, dataSetPath: string): void;
 
         /** This method opens the report from the report server.
-         * @param {string} Path of the report server report
-         * @param {string} Reports server URL
-         * @returns {void}
+         * @param {string} Path of the report server report.
+         * @param {string} Reports server URL.
+         * @param {any} .
+         * @returns {undefined}
          */
-        public openReport(reportPath: string, serverUrl: string): void;
+        public openReport(reportPath: string, serverUrl: string, callBackInfo: any): undefined;
 
         /** This method opens the report using raw report data.
          * @param {any} Provide the report definition in the JSON or string or XML format
@@ -823,10 +824,12 @@ declare namespace ej {
         public removeParameter(reportParameterName: string): void;
 
         /** This method saves the report into the report server.
-         * @param {string} Path of the report server report
-         * @returns {void}
+         * @param {string} Path of the report server report.
+         * @param {boolean} If True denotes report Edit action, otherwise new report Create action.
+         * @param {any} .
+         * @returns {undefined}
          */
-        public saveReport(reportPath: string): void;
+        public saveReport(reportPath: string, isOverWrite: boolean, callBackInfo: any): undefined;
 
         /** This method returns the report in JSON or XML format.
          * @param {Function} Callback method to return the report data.
@@ -874,11 +877,10 @@ declare namespace ej {
 
         /** Opens the report designer browse dialog to open/save reports in the report server.
          * @param {ej.ReportDesigner.BrowseType} Mention the type as Open to perform open report action, otherwise Save.
-         * @param {Function} Callback method of open/save  dialog actions.
-         * @param {string} Name of the report to save.
-         * @returns {void}
+         * @param {Function} .
+         * @returns {undefined}
          */
-        public showOpenSaveReportDialog(browseType: ej.ReportDesigner.BrowseType | string, callback: Function, reportName: string): void;
+        public showOpenSaveReportDialog(browseType: ej.ReportDesigner.BrowseType | string, callback: Function): undefined;
 
         /** Performs switch action from designer to viewer at runtime.
          * @returns {void}
@@ -1429,6 +1431,11 @@ declare namespace ej {
              * @Default {}
              */
             margins?: any;
+
+            /** Enables and disables the page orientation in page settings.
+             * @Default {false}
+             */
+            hidePageOrientation?: boolean;
         }
 
         export interface Parameters {
@@ -1548,11 +1555,6 @@ declare namespace ej {
              * @Default {false}
              */
             enableDropDownSearch?: boolean;
-
-            /** Show or hide the parameter popup re-size on report initial rendering.
-             * @Default {false}
-             */
-            enablePopupResize?: boolean;
 
             /** Specifies the export settings for Report Viewer component.
              * @Default {}
@@ -1838,12 +1840,8 @@ declare namespace ej {
             Zoom,
             //Used to change the layout order of report items in design area surface
             Order,
-            //Aligns all report items to the center position of design surface in horizontal or vertical direction.
-            Center,
             //Aligns the selected report item in the design surface
             Alignment,
-            //Distributes selected report items at equal intervals from each other
-            Distribute,
             //Equally size the selected report items in the design surface.
             Sizing,
             //Snaps the selected report items to the closest gridline.
@@ -2100,11 +2098,6 @@ declare namespace ej {
              * @Default {false}
              */
             enableDropDownSearch?: boolean;
-
-            /** Show or hide the parameter popup re-size on report initial rendering.
-             * @Default {false}
-             */
-            enablePopupResize?: boolean;
 
             // tslint:disable:max-line-length
             /** Set the property value as true to enable the processing of a large amount of data with a lesser memory footprint and without performance degradation.
@@ -2666,6 +2659,11 @@ declare namespace ej {
              * @Default {}
              */
             margins?: any;
+
+            /** Enables or disables the page orientation in the page settings.
+             * @Default {false}
+             */
+            hidePageOrientation?: boolean;
         }
 
         export interface Parameter {
@@ -2749,6 +2747,11 @@ This support applicable only in Classic view.
              * @Default {false}
              */
             hideTooltip?: boolean;
+
+            /** Show or hide the parameter popup re-size on report initial rendering.
+             * @Default {false}
+             */
+            enablePopupResize?: boolean;
 
             /** Show or hide the parameter block on report initial rendering.
              * @Default {false}

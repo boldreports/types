@@ -1,6 +1,6 @@
 {
   "name": "@boldreports/types",
-  "version": "6.2.32",
+  "version": "6.3.16",
   "typeScriptVersion": "2.3",
   "types": "index"
 }
