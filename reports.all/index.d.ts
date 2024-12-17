@@ -1,6 +1,6 @@
 /**
  *  filename: index.d.ts
- *  version : 6.3.16
+ *  version : 6.3.24
  *  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
  *  Use of this code is subject to the terms of our license.
  *  A copy of the current license can be obtained at any time by e-mailing
@@ -2010,6 +2010,11 @@ declare namespace ej {
              * @Default {[]}
              */
             parameters?: Parameter[];
+
+            /** Gets or sets the list of extended attributes associated with the report.
+             * @Default {null}
+             */
+            extendedAttributes?: Object;
 
             /** Specifies the toolbar settings.
              */
