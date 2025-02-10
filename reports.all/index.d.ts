@@ -1,7 +1,7 @@
 /**
  *  filename: index.d.ts
- *  version : 6.3.24
- *  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+ *  version : 7.1.9
+ *  Copyright Syncfusion Inc. 2001 - 2025. All rights reserved.
  *  Use of this code is subject to the terms of our license.
  *  A copy of the current license can be obtained at any time by e-mailing
  *  licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -921,10 +921,23 @@ declare namespace ej {
              */
             configurePaneSettings?: ConfigurePaneSettings;
 
+            /** Gets or sets the tab index of data panel.
+             * @Default {ej.ReportDesigner.DataTab.Dataset}
+             */
+            dataTabIndex?: ej.ReportDesigner.DataTab | string;
+
             /** Set the property as true to disable the code module configuration in RDL reports.
              * @Default {false}
              */
             disableCodeModule?: boolean;
+
+            // tslint:disable:max-line-length
+            /** Gets or sets the embed token configured with user details, custom attributes, and report parameters to access the Report Server API services, instead of using the service
+             * authorization token.
+             * @Default {empty}
+             */
+            // tslint:enable:max-line-length
+            embedToken?: string;
 
             /** Enable or Disable Impersonate option for report designer datasources
              * @Default {false}
@@ -1018,10 +1031,10 @@ declare namespace ej {
              */
             waitingPopupTemplate?: string;
 
-            /** Gets or sets the tab index of data panel.
-             * @Default {ej.ReportDesigner.DataTab.Dataset}
+            /** Gets or sets the zoom factor for report designer.
+             * @Default {ej.ReportDesigner.ZoomFactor.Z_100}
              */
-            dataTabIndex?: ej.ReportDesigner.DataTab | string;
+            zoomFactor?: ej.ReportDesigner.ZoomFactor | string;
 
             /** This event will be triggered before AJAX loads.
              */
@@ -1110,6 +1123,10 @@ declare namespace ej {
              */
             serviceAuthorizationToken?: string;
 
+            /** Embed Token of ReportingService
+             */
+            embedToken?: string;
+
             /** Action type of AJAX call back
              */
             actionType?: string;
@@ -1137,6 +1154,10 @@ declare namespace ej {
              */
             serviceAuthorizationToken?: string;
 
+            /** Embed Token of ReportingService
+             */
+            embedToken?: string;
+
             /** Action type of AJAX call back
              */
             actionType?: string;
@@ -1163,6 +1184,10 @@ declare namespace ej {
             /** Token of ReportingService
              */
             serviceAuthorizationToken?: string;
+
+            /** Embed Token of ReportingService
+             */
+            embedToken?: string;
 
             /** Action type of AJAX call back
              */
@@ -1856,6 +1881,13 @@ declare namespace ej {
             All,
         }
 
+        enum DataTab {
+            //Sets the datasource panel as default tab in data panel.
+            Datasource,
+            //Sets the dataset panel as default tab in data panel.
+            Dataset,
+        }
+
         enum ReportType {
             //Renders designer in RDL mode.
             RDL,
@@ -1863,11 +1895,27 @@ declare namespace ej {
             RDLC,
         }
 
-        enum DataTab {
-            //Sets the datasource panel as default tab in data panel.
-            Datasource,
-            //Sets the dataset panel as default tab in data panel.
-            Dataset,
+        enum ZoomFactor {
+            //25
+            Z_25,
+            //50
+            Z_50,
+            //75
+            Z_75,
+            //100
+            Z_100,
+            //150
+            Z_150,
+            //200
+            Z_200,
+            //250
+            Z_250,
+            //300
+            Z_300,
+            //350
+            Z_350,
+            //400
+            Z_400,
         }
 
         enum DataFormat {
@@ -2068,6 +2116,13 @@ declare namespace ej {
              * @Default {empty}
              */
             serviceAuthorizationToken?: string;
+
+            // tslint:disable:max-line-length
+            /** Specifies the token that contains authorization token, report parameters, custom attributes and user information to process the reports.
+             * @Default {empty}
+             */
+            // tslint:enable:max-line-length
+            embedToken?: string;
 
             /** Specifies the toolbar render mode of the report.
              * @Default {ej.ReportViewer.ToolbarRenderMode.Native}
@@ -2669,6 +2724,11 @@ declare namespace ej {
              * @Default {false}
              */
             hidePageOrientation?: boolean;
+
+            /** Hide paper sizes with comma separated values
+             * @Default {empty}
+             */
+            hidePagePaperSizes?: any[];
         }
 
         export interface Parameter {
@@ -2993,6 +3053,8 @@ This support applicable only in Classic view.
             Settings,
             //Specifies the LimitRecordSetup as value in ToolbarItems to get specified item.
             LimitRecordSetup,
+            //Specifies the AlertIcon as value in ToolbarItems to get specified item.
+            AlertIcon,
             //Shows all toolbar items.
             All,
         }
