@@ -1,6 +1,6 @@
 /**
  *  filename: index.d.ts
- *  version : 7.1.9
+ *  version : 9.1.7
  *  Copyright Syncfusion Inc. 2001 - 2025. All rights reserved.
  *  Use of this code is subject to the terms of our license.
  *  A copy of the current license can be obtained at any time by e-mailing
@@ -931,6 +931,16 @@ declare namespace ej {
              */
             disableCodeModule?: boolean;
 
+            /** Set the property as false to disable the Ruler in the report design area.
+             * @Default {true}
+             */
+            enableRuler?: boolean;
+
+            /** Set the property to true to enable the visual appearance of the page margin in the report design area.
+             * @Default {false}
+             */
+            enablePageMargin?: boolean;
+
             // tslint:disable:max-line-length
             /** Gets or sets the embed token configured with user details, custom attributes, and report parameters to access the Report Server API services, instead of using the service
              * authorization token.
@@ -1676,6 +1686,11 @@ declare namespace ej {
              * @Default {empty}
              */
             category?: string;
+
+            /** Set the property to false to restrict placing the report item in the header and footer.
+             * @Default {true}
+             */
+            allowHeaderFooter?: boolean;
         }
 
         export interface ToolbarSettings {
@@ -1726,6 +1741,8 @@ declare namespace ej {
             CSV,
             //Specifies the XML property in ExportOptions to get XML option.
             XML,
+            //Specifies the TXT property in ExportOptions to get TXT option.
+            TXT,
             //Specifies the customItems property in ExportOptions to get customItems option.
             CustomItems,
         }
@@ -2222,6 +2239,12 @@ declare namespace ej {
             reportLoaded?(e: ReportLoadedEventArgs): void;
 
             // tslint:disable:max-line-length
+            /** Fires when report processing is canceled. You can use the reportCanceled event to perform any action after canceling either the report viewer process or the export process.
+             */
+            // tslint:enable:max-line-length
+            reportCanceled?(e: ReportCanceledEventArgs): void;
+
+            // tslint:disable:max-line-length
             /** Fires when user clicks on a failed report item in the rendered report, before displaying error details dialog. If you want to show custom error detail or perform any action before
              * viewing error detail, you can make use of the showError event.
              */
@@ -2380,9 +2403,20 @@ declare namespace ej {
 
         export interface ReportLoadedEventArgs {
 
-            /** true if the event should be canceled; otherwise, false.
+            /** returns the report model.
              */
-            cancel?: boolean;
+            model?: any;
+
+            /** returns the name of the event.
+             */
+            type?: string;
+        }
+
+        export interface ReportCanceledEventArgs {
+
+            /** returns the process where either viewer processing or export processing is canceled.
+             */
+            process?: string;
 
             /** returns the report model.
              */
@@ -2921,6 +2955,8 @@ This support applicable only in Classic view.
             CSV,
             //Specifies the XML property in ExportOptions to get XML option.
             XML,
+            //Specifies the TXT property in ExportOptions to get TXT option.
+            TXT,
             //Specifies the customItems property in ExportOptions to get customItems option.
             CustomItems,
         }
