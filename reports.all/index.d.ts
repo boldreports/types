@@ -1,6 +1,6 @@
 /**
  *  filename: index.d.ts
- *  version : 9.1.7
+ *  version : 10.1.11
  *  Copyright Syncfusion Inc. 2001 - 2025. All rights reserved.
  *  Use of this code is subject to the terms of our license.
  *  A copy of the current license can be obtained at any time by e-mailing
@@ -710,6 +710,11 @@ declare namespace ej {
          * @returns {void}
          */
         public cut(): void;
+
+        /** Destroy the client and server side report designer processing objects.
+         * @returns {void}
+         */
+        public destroy(): void;
 
         /** Get the list of datasets from the report.
          * @returns {void}
