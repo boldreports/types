@@ -1,6 +1,6 @@
 /**
  *  filename: index.d.ts
- *  version : 10.1.11
+ *  version : 11.1.10
  *  Copyright Syncfusion Inc. 2001 - 2025. All rights reserved.
  *  Use of this code is subject to the terms of our license.
  *  A copy of the current license can be obtained at any time by e-mailing
@@ -1640,6 +1640,18 @@ declare namespace ej {
              * @Default {1}
              */
             zoomFactor?: number;
+
+            // tslint:disable:max-line-length
+            /** Set the property value as true to enable the cross domain cookies exchange for sticking the user's session in cross domain request.
+             * @Default {false}
+             */
+            // tslint:enable:max-line-length
+            enableCrossDomainCookies?: boolean;
+
+            /** Enables and disables tooltips for all y-axis values when hovering over a point on the x-axis.
+             * @Default {false}
+             */
+            enableCrossAxisTooltip?: boolean;
         }
 
         export interface ReportDataExtension {
@@ -2206,6 +2218,18 @@ declare namespace ej {
             /** Specifies the customBrandSettings.
              */
             customBrandSettings?: CustomBrandSettings;
+
+            // tslint:disable:max-line-length
+            /** Set the property value as true to enable the cross domain cookies exchange for sticking the user's session in cross domain request.
+             * @Default {false}
+             */
+            // tslint:enable:max-line-length
+            enableCrossDomainCookies?: boolean;
+
+            /** Enables and disables tooltips for all y-axis values when hovering over a point on the x-axis.
+             * @Default {false}
+             */
+            enableCrossAxisTooltip?: boolean;
 
             // tslint:disable:max-line-length
             /** Fires during drill through action done in report. If you want to perform any operation when a drill through action is performed, you can make use of the drillThrough event.
