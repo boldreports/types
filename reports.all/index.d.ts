@@ -1,6 +1,6 @@
 /**
  *  filename: index.d.ts
- *  version : 11.1.10
+ *  version : 12.1.12
  *  Copyright Syncfusion Inc. 2001 - 2025. All rights reserved.
  *  Use of this code is subject to the terms of our license.
  *  A copy of the current license can be obtained at any time by e-mailing
@@ -968,6 +968,16 @@ declare namespace ej {
              * @Default {false}
              */
             enableTableMultipleDataAssign?: boolean;
+
+            /** Set this property to true to allow users to view and publish report items as reusable report parts.
+             * @Default {false}
+             */
+            enableReportPart?: boolean;
+
+            /** Set this property to true to show the option to enable the operators in report parameters.
+             * @Default {false}
+             */
+            enableParameterOperator?: boolean;
 
             /** Gets or sets the data connectors name as array of strings to filter data connectors in data panel.
              * @Default {[ ]}
@@ -2754,6 +2764,11 @@ declare namespace ej {
              * @Default {false}
              */
             UsePrintSizes?: boolean;
+
+            /** Set the property value as 1 to enable ignore cell merge for Excel layout option in the report export document.
+             * @Default {0}
+             */
+            LayoutOption?: number;
         }
 
         export interface PageSettings {
