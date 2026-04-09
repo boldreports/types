@@ -1,6 +1,6 @@
 {
   "name": "@boldreports/types",
-  "version": "2.2.23",
+  "version": "13.1.26",
   "description": "TypeScript definitions for Bold Reports",
   "repository": {
     "type": "git",
